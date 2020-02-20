@@ -2,9 +2,6 @@
 require_once "config/db.php";
 session_start();
 
-if(isset($_SESSION['user_id'])){
-  header("Location: index.php");
-}
 if($_SERVER['REQUEST_METHOD'] == "POST"){
   $email = $_POST['email'];
   $password = $_POST['password'];
@@ -24,13 +21,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Login</title>
+    <link rel="stylesheet" href="style/login.css" />
   </head>
   <body>
+    <div class="container">
     <h1>Login</h1>
     <hr />
-
-
     <form class="" action="" method="POST">
       <p>
         <label>Email</label><br>
@@ -42,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
           </p>
           <p>
             <input type="submit" value="Login"/>
-
+          </div>
     </form>
   </body>
 </html>
